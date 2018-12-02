@@ -14,7 +14,7 @@ killTomcat()
 }
 
 ## 构建web项目，生成iWeb.war包
-cd $PROJ_PATH/iWeb
+cd $PROJ_PATH
 mvn clean install
 
 ## 停止tomcat
@@ -26,7 +26,7 @@ rm -f $TOMCAT_PATH/webapps/iWeb.war
 rm -rf $TOMCAT_PATH/webapps/ROOT
 
 ## 复制/粘贴新iWeb.war包到tomcat
-cp $PROJ_PATH/iWeb/target/iWeb.war $TOMCAT_PATH/webapps/
+cp $PROJ_PATH/target/iWeb.war $TOMCAT_PATH/webapps/
 cd $TOMCAT_PATH/webapps/
 mv iWeb.war ROOT.war
 
